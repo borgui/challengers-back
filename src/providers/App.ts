@@ -1,16 +1,8 @@
-/**
- * Primary file for your Clustered API Server
- *
- * @author Faiz A. Farooqui <faiz@geekyants.com>
- */
-
 import * as kue from 'kue';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 
 import Express from './Express';
-import { Database } from './Database';
-
 import Queue from './Queue';
 import Locals from './Locals';
 import Log from '../middlewares/Log';
@@ -36,14 +28,8 @@ class App {
 	public loadServer (): void {
 		Log.info('Server :: Booting @ Master...');
 
+		console.log("test")
 		Express.init();
-	}
-
-	// Loads the Database Pool
-	public loadDatabase (): void {
-		Log.info('Database :: Booting @ Master...');
-
-		Database.init();
 	}
 
 	// Loads the Worker Cluster

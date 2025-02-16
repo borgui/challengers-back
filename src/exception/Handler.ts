@@ -14,7 +14,7 @@ class Handler {
 	public static notFoundHandler(_express): any {
 		const apiPrefix = Locals.config().apiPrefix;
 
-		_express.use('*', (req, res) => {
+		_express.use('*splat', (req, res) => {
 			const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
 			Log.error(`Path '${req.originalUrl}' not found [IP: '${ip}']!`);

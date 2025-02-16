@@ -12,7 +12,7 @@ import Log from '../middlewares/Log';
 class Queue {
 	public jobs: any;
 
-	constructor() {
+	/*constructor() {
 		this.jobs = kue.createQueue({
 			prefix: Locals.config().redisPrefix,
 			redis: {
@@ -25,7 +25,7 @@ class Queue {
 		this.jobs
 			.on('job enqueue', (_id, _type) => Log.info(`Queue :: #${_id} Processing of type '${_type}'`))
 			.on('job complete', (_id) => this.removeProcessedJob(_id));
-	}
+	}*/
 
 	public dispatch (_jobName: string, _args: object, _callback: Function): void {
 		this.jobs.create(_jobName, _args).save();

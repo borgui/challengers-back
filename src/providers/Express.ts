@@ -43,7 +43,6 @@ class Express {
 	 * Mounts all the defined routes
 	 */
 	private mountRoutes (): void {
-		this.express = Routes.mountWeb(this.express);
 		this.express = Routes.mountApi(this.express);
 	}
 

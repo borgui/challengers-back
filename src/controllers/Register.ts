@@ -4,7 +4,6 @@
  * @author Faiz A. Farooqui <faiz@geekyants.com>
  */
 
-import User from '../../../models/User';
 
 class Register {
 	public static perform (req, res): any {
@@ -25,35 +24,6 @@ class Register {
 
 		const _email = req.body.email;
 		const _password = req.body.password;
-
-		const user = new User({
-			email: _email,
-			password: _password
-		});
-
-		User.findOne({ email: _email }, (err, existingUser) => {
-			if (err) {
-				return res.json({
-					error: err
-				});
-			}
-
-			if (existingUser) {
-				return res.json({
-					error: ['Account with the e-mail address already exists.']
-				});
-			}
-
-			user.save().then((user) => {
-				return res.json({
-					message: ['You have been successfully registered with us!']
-				});
-			}).catch((err) => {
-				return res.json({
-						error: err
-					});
-			});
-		});
 	}
 }
 
