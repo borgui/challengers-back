@@ -1,9 +1,3 @@
-/**
- * Refresh JWToken
- *
- * @author Faiz A. Farooqui <faiz@geekyants.com>
- */
-
 import * as jwt from 'jsonwebtoken';
 
 class RefreshTokenController {
