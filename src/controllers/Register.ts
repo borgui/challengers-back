@@ -1,10 +1,3 @@
-/**
- * Define the Register API logic
- *
- * @author Faiz A. Farooqui <faiz@geekyants.com>
- */
-
-
 class Register {
 	public static perform (req, res): any {
 		req.assert('email', 'E-mail cannot be blank').notEmpty();
